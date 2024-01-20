@@ -1,0 +1,100 @@
+import pygame as pg
+import settings
+
+pg.init()
+
+pg.display.set_caption("TicTacToe")
+screen = pg.display.set_mode((690, 690))
+
+clock = pg.time.Clock()
+FPS = 60
+counter_of_moves = 0
+whos_turn = "blue"
+field = [
+    ["", "", "", ],
+    ["", "", "", ],
+    ["", "", "", ],
+]
+
+winner = ""
+
+upper_left = "none"
+upper_middle = "none"
+upper_right = "none"
+
+middle_left = "none"
+middle_middle = "none"
+middle_right = "none"
+
+lower_left = "none"
+lower_middle = "none"
+lower_right = "none"
+
+
+# Load and scale the playing field image
+playing_field = pg.image.load('ticTacBackground.png').convert_alpha()
+playing_field = pg.transform.scale(playing_field, (690, 690))
+
+cross = pg.image.load('tic.png').convert_alpha()
+cross = pg.transform.scale(cross, (200, 200))
+
+round = pg.image.load('tac.png').convert_alpha()
+round = pg.transform.scale(round, (200, 200))
+
+# round_won = pg.image.load('tacWon.png').convert_alpha()
+# round_won = pg.transform.scale(round_won, (480,240))
+#
+# cross_won = pg.image.load('ticWon.png').convert_alpha()
+# cross_won = pg.transform.scale(cross_won, (480,240))
+#
+# draw_won = pg.image.load('draw.png').convert_alpha()
+# draw_won = pg.transform.scale(draw_won, (480,240))
+
+
+running = True
+while running:
+    clock.tick(FPS)
+
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            running = False
+
+        elif event.type == pg.MOUSEBUTTONDOWN and event.button == 1:  # Проверка нажатия левой кнопки мыши
+            x, y = event.pos
+            counter_of_moves = counter_of_moves+1
+            settings.check_to_win(field,counter_of_moves)
+            tic_win, tac_win, draw = settings.check_to_win(field,counter_of_moves)
+            print(tic_win,tac_win,draw)
+            if tic_win!=True and tac_win!=True and draw!=True:
+                #0,0
+                if 0 <= x <= 230 and 0 <= y <= 230:
+                    if whos_turn=="blue" and upper_left=="none":
+                        upper_left="round"
+                        whos_turn = "red"
+                        field[0][0] = "o"
+                    elif whos_turn=="red" and upper_left=="none":
+                        upper_left="cross"
+                        whos_turn = "blue"
+                        field[0][0] = "x"
+
+                #0,1
+                elif 231 <= x <= 460 and 0 <= y <= 230:
+                    if whos_turn == "blue" and upper_middle == "none":
+                        upper_middle = "round"
+                        whos_turn = "red"
+                        field[0][1] = "o"
+                    elif whos_turn == "red" and upper_middle == "none":
+                        upper_middle = "cross"
+                        whos_turn = "blue"
+                        field[0][1] = "x"
+
+                #0,2
+                elif 461 <= x <= 690 and 0 <= y <= 230:
+                    if whos_turn=="blue" and upper_right=="none":
+                        upper_right="round"
+                        whos_turn = "red"
+                        field[0][2] = "o"
+                    elif whos_turn=="red" and upper_right=="none":
+                        upper_right="cross"
+                        whos_turn = "blue"
+                        field[0][2] = "x"
