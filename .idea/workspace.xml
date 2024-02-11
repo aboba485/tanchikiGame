@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6e8a0a8e-49b1-4d60-813f-667de016d43c" name="Changes" comment="Ive added a lot of new pictures, which will indicate amount of lifes that ur tank has left">
-      <change afterPath="$PROJECT_DIR$/assets/four_lifes_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/four_lifes_red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/no_lifes.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/one_life_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/one_life_red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/three_lifes_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/three_lifes_red.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/two_lifes_blue.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/two_lifes_red.png" afterDir="false" />
-    </list>
+    <list default="true" id="6e8a0a8e-49b1-4d60-813f-667de016d43c" name="Changes" comment="Ive added a lot of new pictures, which will indicate amount of lifes that ur tank has left" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
